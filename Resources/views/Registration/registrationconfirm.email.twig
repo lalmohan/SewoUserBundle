@@ -1,0 +1,14 @@
+{% block subject %}Register confirmation{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Hello {{ user.username }} !
+
+
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+Hello {{ user.username }} !
+You can confirm your registration by accessing <a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a>
+{% endblock %}

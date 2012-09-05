@@ -1,0 +1,63 @@
+parameters:
+    Sewolabs_user_security.component.authentication.handler.login_success_handler.class: Sewolabs\UserBundle\Component\Authentication\Handler\LoginFailureHandler
+    Sewolabs_user_security.component.authentication.handler.logout_success_handler.class: Sewolabs\UserBundle\Component\Authentication\Handler\LogoutSuccessHandler
+    sewo_oauth.registration.form.handler.fosub_bridge.class: Sewolabs\UserBundle\Form\SewoUBregistrationFormHandler
+    
+services:
+    Sewolabs_user_security.component.authentication.handler.login_success_handler:
+        class:  %Sewolabs_user_security.component.authentication.handler.login_success_handler.class%
+        arguments:  [@service_container, @router, @security.context]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' } 
+    Sewolabs_user_security.component.authentication.handler.logout_success_handler:
+        class:  %Sewolabs_user_security.component.authentication.handler.logout_success_handler.class%
+        arguments:  [@service_container, @router]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }
+    sewolabs_user.profile.form.type:
+        class: Sewolabs\UserBundle\Form\Type\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: fos_user_profile }
+    sewolabs_user.registration.form.type:
+        class: Sewolabs\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: fos_user_registration }
+    sewolabs_user.change_password.form.type:
+        class: Sewolabs\UserBundle\Form\Type\ChangePasswordFormType
+        tags:
+            - { name: form.type, alias: fos_user_change_password }
+    sewolabs_user.resetting.form.type:
+        class: Sewolabs\UserBundle\Form\Type\ResettingFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: fos_user_resetting }
+    sewo_oauth.registration.form.handler:
+        class:  %sewo_oauth.registration.form.handler.fosub_bridge.class%
+        arguments:  [@fos_user.registration.form.handler, @fos_user.user_manager, @fos_user.mailer, @fos_user.util.token_generator]
+        scope: request
+    Sewolabs_user.form.handler.registration:
+        class: Sewolabs\UserBundle\Form\Handler\RegistrationFormHandler
+        arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator"]
+        scope: request
+        public: false
+#    sewo_oauth.abstract_resource_ownermap:
+#        class:  %sewo_oauth.resource_ownermap.class%
+#        arguments:  [@service_container, @security.http_utils, %hwi_oauth.resource_owners%, {type: collection}]
+#        scope: request
+#    sewolabs_user.new_password.form:
+#        class: Symfony\Component\Form\Form
+#        factory-method: createNamed
+#        factory-service: form.factory
+#        arguments: ["%sewolabs_user.new_password.form.name%", "@request", "%sewolabs_user.new_password.form.type%", "", "%sewolabs_user.new_password.form.validation_groups%"]
+#        scope: request
+#    sewolabs_user.new_password.form.type:
+#        class: Sewolabs\UserBundle\Form\Type\NewPasswordFormType
+#        tags:
+#            - { name: form.type, alias: sewolabs_user_change_password }
+#    sewolabs_user.new_password.form.handler.default:
+#        class: Sewolabs\UserBundle\Form\Handler\NewPasswordFormHandler
+#        arguments: ["@sewolabs_user.new_password.form", "@request", "@fos_user.user_manager",{type: service}]
+#        scope: request	
+
