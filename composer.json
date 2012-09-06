@@ -15,8 +15,10 @@
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.1.*",
-        "symfony/security-bundle": "2.1.*"
-	"kriswallsmith/buzz": "0.7"
+        "symfony/security-bundle": "2.1.*",
+	"kriswallsmith/buzz": "0.7",
+        "friendsofsymfony/user-bundle": "*",
+	"hwi/oauth-bundle": "*"
     },
     "require-dev": {
         "twig/twig": "*",
@@ -26,8 +28,6 @@
         "willdurand/propel-typehintable-behavior": "dev-master",
         "symfony/yaml": "2.1.*",
         "symfony/validator": "2.1.*"
-	"friendsofsymfony/user-bundle": "*",
-	"hwi/oauth-bundle": "*"
     },
     "autoload": {
         "psr-0": { "Sewolabs\\UserBundle": "" }
