@@ -8,7 +8,7 @@ This version of the bundle requires Symfony 2.1.
 ## Installation
 
 
-### Step 1: Download FOSUserBundle using composer
+### Step 1: Download SewolabsUserBundle using composer
 
 Add SewoUserBundle in your composer.json:
 
@@ -48,7 +48,7 @@ public function registerBundles()
     $bundles = array(
         // ...
 	new Sewolabs\UserBundle\SewolabsUserBundle(),
-        new FOS\UserBundle\FOSUserBundle(),
+   new FOS\UserBundle\FOSUserBundle(),
 	new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
 
     );
