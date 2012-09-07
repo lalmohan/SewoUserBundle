@@ -26,7 +26,7 @@ file in this bundle:
 Installation
 ------------
 
-All the installation instructions are located in [documentation](https://github.com/lalmohan/SewoUserBundle/Resources/doc/index.md).
+All the installation instructions are located in [documentation](https://github.com/lalmohan/SewoUserBundle/blob/master/Resources/doc/index.md).
 
 License
 -------
