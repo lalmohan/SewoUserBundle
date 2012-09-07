@@ -1,4 +1,4 @@
-SewoUserBundle
+SewolabsUserBundle
 =============
 
 The SewoUserBundle adds support for a database-backed user system and 
