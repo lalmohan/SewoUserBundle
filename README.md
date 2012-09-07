@@ -1,16 +1,17 @@
 SewoUserBundle
 =============
 
-The SewoUserBundle adds support for a database-backed user system in Symfony2.
+The SewoUserBundle adds support for a database-backed user system and 
+authenticating users via oauth in Symfony2.
 It provides a flexible framework for user management that aims to handle
 common tasks such as user registration and password retrieval.
-OAuth and Normal client integration for Symfony2 with user management
+
 Features include:
 
 - Users can be stored via Doctrine ORM, MongoDB/CouchDB ODM or Propel
 - Registration support, with an optional confirmation per mail
 - Password reset support
-- Alternate login using thrd party(facebook,google)
+- Alternate login using Auth(facebook,google)
 
 **Caution:** This bundle is developed in sync with [symfony's repository](https://github.com/symfony/symfony).
 
