@@ -21,7 +21,7 @@ Documentation
 The bulk of the documentation is stored in the `Resources/doc/index.md`
 file in this bundle:
 
-[Read the Documentation for master](https://github.com/lalmohan/SewoUserBundle/Resources/doc/index.md)
+[Read the Documentation for master](https://github.com/lalmohan/SewoUserBundle/blob/master/Resources/doc/index.md)
 
 Installation
 ------------
