@@ -10,7 +10,7 @@ This version of the bundle requires Symfony 2.1.
 
 ### Step 1: Download SewolabsUserBundle using composer
 
-Add SewoUserBundle in your composer.json:
+Add SewolabsUserBundle in your composer.json:
 
 ```js
 {
