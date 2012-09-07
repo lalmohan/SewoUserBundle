@@ -8,7 +8,7 @@ This version of the bundle requires Symfony 2.1.
 ## Installation
 
 
-### Step 1: Download FOSUserBundle using composer
+### Step 1: Download SewolabsUserBundle using composer
 
 Add SewoUserBundle in your composer.json:
 
@@ -55,80 +55,7 @@ public function registerBundles()
 }
 ```
 
-### Step 3: Create your User class
-
-The goal of this bundle is to persist some `User` class to a database (MySql,
-MongoDB, CouchDB, etc). Your first job, then, is to create the `User` class
-for your application. This class can look and act however you want: add any
-properties or methods you find useful. This is *your* `User` class.
-
-The bundle provides base classes which are already mapped for most fields
-to make it easier to create your entity. Here is how you use it:
-
-1. Extend the base `User` class (the class to use depends of your storage)
-2. Map the `id` field. It must be protected as it is inherited from the parent class.
-
-**Warning:**
-
-> When you extend from the mapped superclass provided by the bundle, don't
-> redefine the mapping for the other fields as it is provided by the bundle.
-
-In the following sections, you'll see examples of how your `User` class should
-look, depending on how you're storing your users (Doctrine ORM, MongoDB ODM,
-or CouchDB ODM).
-
-Your `User` class can live inside any bundle in your application. For example,
-if you work at "Acme" company, then you might create a bundle called `AcmeUserBundle`
-and place your `User` class in it.
-
-**Warning:**
-
-> If you override the __construct() method in your User class, be sure
-> to call parent::__construct(), as the base User class depends on
-> this to initialize some fields.
-
-**a) Doctrine ORM User class**
-
-If you're persisting your users via the Doctrine ORM, then your `User` class
-should live in the `Entity` namespace of your bundle and look like this to
-start:
-
-``` php
-<?php
-// src/Acme/UserBundle/Entity/User.php
-
-namespace Acme\UserBundle\Entity;
-
-use FOS\UserBundle\Entity\User as BaseUser;
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * @ORM\Entity
- * @ORM\Table(name="fos_user")
- */
-class User extends BaseUser
-{
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-}
-```
-
-**Note:**
-
-> `User` is a reserved keyword in SQL so you cannot use it as table name.
-
-
-### Step 4: Configure your application's security.yml
+### Step 2: Configure your application's security.yml
 
 In order for Symfony's security component to use the FOSUserBundle, you must
 tell it to do so in the `security.yml` file. The `security.yml` file is where the
@@ -221,7 +148,7 @@ security component [documentation](http://symfony.com/doc/current/book/security.
 > the FOSUserBundle is configured in. You will use this in the next step when you
 > configure the FOSUserBundle.
 
-### Step 5: Configure the SewolabsUserBundle
+### Step 3: Configure the SewolabsUserBundle
 
 Now that you have properly configured your application's `security.yml` to work
 with the FOSUserBundle, the next step is to configure the bundle to work with
@@ -242,8 +169,8 @@ fos_user:
     resetting:
         email:
             from_email:
-                address:        info@sewolabs.com
-                sender_name:    sewolabs
+                address:        your_address@domain.com
+                sender_name:    your_name
             template: SewolabsUserBundle:Resetting:resetting.email.twig
     registration:
         form:
@@ -251,16 +178,16 @@ fos_user:
         confirmation:
             enabled:    true
             from_email:
-                address:        info@sewolabs.com
-                sender_name:    sewolabs
+                address:        your_address@domain.com
+                sender_name:    your_name
             template: SewolabsUserBundle:Registration:registrationconfirm.email.twig
 
 hwi_oauth:
     resource_owners:
         facebook:
             type: facebook
-            client_id: 186594204804249
-            client_secret: 2793041c0d81a12bb2d37dcaea36ce03
+            client_id: <your_client_id>
+            client_secret: <your_client_secret>
             scope: "email"
             user_response_class: 'Sewolabs\UserBundle\OAuth\Response\FacebookUserResponse'
             paths:
@@ -268,8 +195,8 @@ hwi_oauth:
                 profilepicture: picture
         google:
             type: google
-            client_id: 511232487163.apps.googleusercontent.com
-            client_secret: qzybAid4d8ICq1959gMkYZk1
+            client_id: <your_client_id>
+            client_secret: <your_client_secret>
             scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
             user_response_class: 'Sewolabs\UserBundle\OAuth\Response\GoogleUserResponse'
             paths:
@@ -286,7 +213,7 @@ hwi_oauth:
 ```
 
 
-### Step 6: Import SewolabsUserBundle routing files
+### Step 4: Import SewolabsUserBundle routing files
 
 Now that you have activated and configured the bundle, all that is left to do is
 import the SewolabsUserBundle routing files.
@@ -355,12 +282,7 @@ sewolabs_app_urlgoogle:
     pattern:  /user/connect/google
 ```
 
-**Note:**
-
-> In order to use the built-in email functionality (confirmation of the account,
-> resetting of the password), you must activate and configure the SwiftmailerBundle.
-
-### Step 7: Install Assets
+### Step 5: Install Assets
 
 For install assets run the following command.
 
@@ -369,11 +291,7 @@ $  php app/console assets:install web
 ```
 
 
-### Step 8: Update your database schema
-
-Now that the bundle is configured, the last thing you need to do is update your
-database schema because you have added a new entity, the `User` class which you
-created in Step 4.
+### Step 6: Update your database schema
 
 For ORM run the following command.
 
