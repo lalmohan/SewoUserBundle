@@ -287,7 +287,7 @@ sewolabs_app_urlgoogle:
 For install assets run the following command.
 
 ``` bash
-$  php app/console assets:install web
+$ php app/console assets:install web
 ```
 
 
