@@ -18,7 +18,7 @@
         "symfony/security-bundle": "2.1.*",
 	"kriswallsmith/buzz": "0.7",
         "friendsofsymfony/user-bundle": "*",
-	"hwi/oauth-bundle": "0.1-alpha"
+	"hwi/oauth-bundle": "*@dev"
     },
     "require-dev": {
         "twig/twig": "*",
