@@ -24,6 +24,7 @@ Add SewolabsUserBundle in your composer.json:
     "require": {
         "sewolabs/user-bundle":"*"
     }
+   "minimum-stability": "dev",
 }
 ```
 
