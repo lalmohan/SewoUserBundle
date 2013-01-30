@@ -23,11 +23,11 @@ services:
         class: Sewolabs\UserBundle\Form\Type\RegistrationFormType
         arguments: [%fos_user.model.user.class%]
         tags:
-            - { name: form.type, alias: fos_user_registration }
+            - { name: form.type, alias: sewolabs_user_registration }
     sewolabs_user.change_password.form.type:
         class: Sewolabs\UserBundle\Form\Type\ChangePasswordFormType
         tags:
-            - { name: form.type, alias: fos_user_change_password }
+            - { name: form.type, alias: sewolabs_user_change_password }
     sewolabs_user.resetting.form.type:
         class: Sewolabs\UserBundle\Form\Type\ResettingFormType
         arguments: [%fos_user.model.user.class%]
