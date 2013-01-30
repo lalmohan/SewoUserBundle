@@ -3,7 +3,6 @@
 namespace Sewolabs\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use HWI\OAuthBundle\Controller\ConnectController;
 
 class DefaultController extends Controller
 {
