@@ -168,6 +168,8 @@ fos_user:
     service:
         mailer: fos_user.mailer.twig_swift
     resetting:
+        form:
+            type: sewolabs_user_resetting    
         email:
             from_email:
                 address:        your_address@domain.com
