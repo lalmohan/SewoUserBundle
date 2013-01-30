@@ -32,7 +32,7 @@ services:
         class: Sewolabs\UserBundle\Form\Type\ResettingFormType
         arguments: [%fos_user.model.user.class%]
         tags:
-            - { name: form.type, alias: fos_user_resetting }
+            - { name: form.type, alias: sewolabs_user_resetting }
     sewo_oauth.registration.form.handler:
         class:  %sewo_oauth.registration.form.handler.fosub_bridge.class%
         arguments:  [@fos_user.registration.form.handler, @fos_user.user_manager, @fos_user.mailer, @fos_user.util.token_generator]
