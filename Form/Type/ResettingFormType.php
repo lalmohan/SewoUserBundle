@@ -38,6 +38,6 @@ class ResettingFormType extends AbstractType
 
     public function getName()
     {
-        return 'fos_user_resetting';
+        return 'sewolabs_user_resetting';
     }
 }
