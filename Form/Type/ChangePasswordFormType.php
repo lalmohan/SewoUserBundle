@@ -40,6 +40,6 @@ class ChangePasswordFormType extends AbstractType
 
     public function getName()
     {
-        return 'fos_user_change_password';
+        return 'sewolabs_user_change_password';
     }
 }
