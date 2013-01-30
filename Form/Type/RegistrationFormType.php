@@ -52,6 +52,6 @@ class RegistrationFormType extends AbstractType
 
     public function getName()
     {
-        return 'fos_user_registration';
+        return 'sewolabs_user_registration';
     }
 }
