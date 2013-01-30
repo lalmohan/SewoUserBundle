@@ -173,9 +173,13 @@ fos_user:
                 address:        your_address@domain.com
                 sender_name:    your_name
             template: SewolabsUserBundle:Resetting:resetting.email.twig
+    change_password:
+        form:
+            type: sewolabs_user_change_password            
     registration:
         form:
             handler: Sewolabs_user.form.handler.registration
+            type: sewolabs_user_registration
         confirmation:
             enabled:    true
             from_email:
