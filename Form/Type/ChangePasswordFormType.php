@@ -25,8 +25,8 @@ class ChangePasswordFormType extends AbstractType
         $builder->add('new', 'repeated', array(
             'type' => 'password',
             'options' => array('translation_domain' => 'FOSUserBundle'),
-            'first_options' => array('label' => 'New Password'),
-            'second_options' => array('label' => 'Confirm'),
+            'first_options' => array('label' => 'form.new_password'),
+            'second_options' => array('label' => 'form.new_password_confirmation'),
         ));
     }
 

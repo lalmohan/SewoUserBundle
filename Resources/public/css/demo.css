@@ -62,10 +62,10 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 	margin:10px 10px 10px 80px;
 }
 #fos_user_resetting_form_new_second{
-	margin:10px 10px 10px 60px;
+	margin:10px 10px 10px 104px;
 }
 .reset_btn{
-	margin-left:280px;
+	margin-left:223px;
 }
 #fos_user_profile_form_username{
 	margin:10px 10px 10px 80px;
@@ -112,10 +112,12 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 
 }
 #fos_user_change_password_form_new_second{
-	margin:15px 10px 10px 124px;
+    margin: 7px 15px 0px 0px;
+    float: right;
 }
 .setpass_btn{
-	margin-left:240px;
+	margin-left:224px;
+    margin-top: 23px;
 
 }
 .password_reset ul{
