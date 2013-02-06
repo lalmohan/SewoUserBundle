@@ -1,5 +1,5 @@
 <?php
-// src/Acme/UserBundle/Entity/User.php
+
 
 namespace Sewolabs\UserBundle\Entity;
 
