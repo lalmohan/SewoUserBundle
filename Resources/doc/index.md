@@ -217,6 +217,16 @@ hwi_oauth:
             google: googleId
             facebook: facebookId
     connect: ~
+
+doctrine_mongodb:
+    connections:
+        default:
+            server: <sever>
+            options: {}
+    default_database: <db_name>
+    document_managers:
+        default:
+            auto_mapping: true
 ```
 
 
