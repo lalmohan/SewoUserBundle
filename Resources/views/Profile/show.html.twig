@@ -3,10 +3,10 @@
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:show_content.html.twig" %}
   <a href="{{ path('fos_user_change_password') }}">
-          Set New Password?<br>
+      {{ 'layout.set_new_password'|trans({}, 'FOSUserBundle') }}<br>
   </a>
   <a href="{{ path('fos_user_security_logout') }}">
-          {{ 'Logout'|trans({}, 'FOSUserBundle') }}
+          {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
   </a>
 
 

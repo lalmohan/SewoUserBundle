@@ -18,16 +18,16 @@
 <form action="{{ path("fos_user_security_check") }}" method="post">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-   <div class="username_lab"> <label for="username">{{ 'Username/Email'|trans({}, 'FOSUserBundle') }}</label></div>
+   <div class="username_lab"> <label for="username">{{ 'security.login.username/email'|trans({}, 'FOSUserBundle') }}</label></div>
     <div class="username_textbox"> <input type="text" id="username" name="_username" value="{{ last_username }}" /></div>
 
-    <div class="password_lab"><label for="password">{{ 'Password'|trans({}, 'FOSUserBundle') }}</label></div>
+    <div class="password_lab"><label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label></div>
     <div class="password_textbox"><input type="password" id="password" name="_password" /></div>
 
    <div> <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'Remember_me'|trans({}, 'FOSUserBundle') }}</label></div>
+    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label></div>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'Login'|trans({}, 'FOSUserBundle') }}" />
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
 </form>
 <a href="request">Forgot password?</a>
 <a href="register">Register?</a>
@@ -36,7 +36,7 @@
 {% else %}
 <b> Hi {{ app.user.username }}</b>
  <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'Logout'|trans({}, 'FOSUserBundle') }}
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                 </a>
   {% endif %}
 
