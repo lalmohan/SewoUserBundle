@@ -48,9 +48,10 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-	new Sewolabs\UserBundle\SewolabsUserBundle(),
-  new FOS\UserBundle\FOSUserBundle(),
-	new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+    new FOS\UserBundle\FOSUserBundle(),
+    new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+    new Sewolabs\UserBundle\SewolabsUserBundle(),
+
 
     );
 }
