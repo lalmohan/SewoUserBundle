@@ -1,14 +1,11 @@
-{% block subject %}Register confirmation{% endblock %}
-
-{% block body_text %}
+{% block subject %}
 {% autoescape false %}
-Hello {{ user.username }} !
-
-
+{{ 'registration.email.subject'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}, 'FOSUserBundle') }}
 {% endautoescape %}
 {% endblock %}
-
-{% block body_html %}
-Hello {{ user.username }} !
-You can confirm your registration by accessing <a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a>
+{% block body_text %}
+{% autoescape false %}
+{{ 'registration.email.message'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}, 'FOSUserBundle') }}
+{% endautoescape %}
 {% endblock %}
+{% block body_html %}{% endblock %}
